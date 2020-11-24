@@ -1,0 +1,35 @@
+Frontend/node_modules
+dir/HELP.md
+dir/target/
+dir/!.mvn/wrapper/maven-wrapper.jar
+dir/!**/src/main/**/target/
+dir/!**/src/test/**/target/
+
+### STS ###
+dir/.apt_generated
+dir/.classpath
+dir/.factorypath
+dir/.project
+dir/.settings
+dir/.springBeans
+dir/.sts4-cache
+
+### IntelliJ IDEA ###
+dir/.idea
+dir/*.iws
+dir/*.iml
+dir/*.ipr
+
+### NetBeans ###
+dir/nbproject/private/
+dir/nbbuild/
+dir/dist/
+dir/nbdist/
+dir/.nb-gradle/
+dir/build/
+dir/!**/src/main/**/build/
+dir/!**/src/test/**/build/
+
+### VS Code ###
+dir/.vscode/
+.vscode/
