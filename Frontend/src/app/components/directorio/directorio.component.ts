@@ -56,6 +56,7 @@ export class DirectorioComponent implements OnInit {
   }
 
   get f() {
+    console.log("Controlsssssssss: ",this.form.controls)
     return this.form.controls;
   }
 
@@ -70,6 +71,7 @@ export class DirectorioComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res)
+          this.form.reset();
           this.getContactos();
         },
         error => console.log(error)
