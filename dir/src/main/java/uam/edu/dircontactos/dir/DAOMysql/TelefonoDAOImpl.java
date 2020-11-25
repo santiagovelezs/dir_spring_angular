@@ -7,11 +7,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import uam.edu.dircontactos.dir.iDAO.DAO;
 import uam.edu.dircontactos.dir.iDAO.DAO_1ToMany;
 import uam.edu.dircontactos.dir.model.Telefono;
 
-public class TelefonoDAOImpl implements DAO<Telefono>, DAO_1ToMany<Telefono>
+public class TelefonoDAOImpl implements DAO_1ToMany<Telefono>
 {
 	private final Connection connection;
 
@@ -45,6 +44,7 @@ public class TelefonoDAOImpl implements DAO<Telefono>, DAO_1ToMany<Telefono>
 		List<Telefono> elements = new ArrayList<>();
 
 		PreparedStatement statement = connection.prepareStatement("SELECT * FROM telefono WHERE id_contacto = ?");
+		statement.setInt(1, id);
 		ResultSet resultSet = statement.executeQuery();
 
 		while (resultSet.next()) 
@@ -122,5 +122,6 @@ public class TelefonoDAOImpl implements DAO<Telefono>, DAO_1ToMany<Telefono>
 
         return telefono;
     }
+	
 	
 }

@@ -1,3 +1,39 @@
-<p *ngFor="let contacto of contactos">
-    contacto.name
-</p>
+
+
+<div *ngFor="let contacto of contactos; index as i;">
+   
+    {{ contacto.name }}    
+    <br>
+
+    <div *ngFor="let telefono of contactos[i].telefonos">
+        <p> {{ telefono.numero }}</p>
+    </div>
+    
+    
+</div>
+
+<div>
+    <form [formGroup]="form" (ngSubmit)="createContacto()">
+        <div class="form-group">
+            <label for="name">Name</label>        
+            <input type="text" formControlName="name" id="name" class="form-control">
+            <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
+                <div *ngIf="f.name.errors.required">Name is required.</div>                    
+            </div>
+        </div>
+        <section>
+            <p>Telefonos</p>
+            <ul formArrayName="telefonos">
+            <li *ngFor="let item of form.get('telefonos')['controls']; let i = index">
+                <input type="text" formControlName="{{i}}">
+                <button type="button" title="Remove" (click)="onRemovePhone(i)">Remove</button>
+            </li>
+            </ul>
+            <button type="button" (click)="onAddPhone()">
+            Add Phone
+            </button>
+        </section>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>
+

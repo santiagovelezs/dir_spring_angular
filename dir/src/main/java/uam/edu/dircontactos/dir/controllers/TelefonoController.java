@@ -14,7 +14,6 @@ import uam.edu.dircontactos.dir.iDAO.DAO;
 import uam.edu.dircontactos.dir.model.Telefono;
 
 @RestController
-@CrossOrigin(origins = "localhost:4200", methods= {RequestMethod.GET,RequestMethod.POST})
 public class TelefonoController 
 {
 	private DAO<Telefono> telefonoDAO;

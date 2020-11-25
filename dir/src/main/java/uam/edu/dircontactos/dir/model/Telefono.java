@@ -11,6 +11,11 @@ public class Telefono
 		
 	}
 	
+	public Telefono(String numero)
+	{		
+		this.numero = numero;
+	}
+	
 	public Telefono(int idContacto, String numero)
 	{
 		this.idContacto = idContacto;

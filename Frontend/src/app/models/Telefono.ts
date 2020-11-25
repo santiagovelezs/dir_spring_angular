@@ -1,4 +1,3 @@
-export interface Telefono {
-    id_contacto: number;
+export interface Telefono {    
     numero: string;    
 }

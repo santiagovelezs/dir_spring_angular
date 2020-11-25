@@ -7,6 +7,8 @@ public interface DAO<T>
     List<T> getAll() throws Exception;
 
     T getBy(int id) throws Exception;
+    
+    //List<T> getAllById(int id) throws Exception;
 
     int save(T t) throws Exception;
 
